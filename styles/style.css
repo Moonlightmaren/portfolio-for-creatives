@@ -517,6 +517,13 @@ em {
   color: var(--color-text-work-grid-title);
 }
 
+.work-grid-project-subtitle {
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin: 0.2em 0;
+  opacity: 0.8;
+}
+
 /* 🏷️ Project category label — displays the type or role of the project */
 .work-grid-project-category {
   color: var(--color-text-project-category);
