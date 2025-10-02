@@ -123,7 +123,7 @@
   --color-bg-holding-page: rgba(255, 255, 255, 0.6);
   /* Headings */
   --h1-color: #000000;
-  --h2-color: #000000;
+  --h2-color: #f25f42;
   --h3-color: #91bf74;
   --h4-color: #91bf74;
   --h5-color: #91bf74;
@@ -570,7 +570,7 @@ a:active {
 /* -------------------------------------------------------------------------- */
 
 a.nav-link-primary {
-  color: var(--color-nav-link);
+  color: #faf8f3;
 }
 a.nav-link-primary:hover {
   color: var(--color-nav-link-hover);
@@ -630,6 +630,10 @@ a.nav-link-primary:hover {
   min-height: 80vh; /* Takes up most of the screen height */
   display: flex;
   flex-direction: column;
+  background: url(../assets/branding-images/maren-brophy-herobackground.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 }
 .hero-header {
   min-height: 6rem; /* Space reserved for logo + nav */
@@ -694,12 +698,55 @@ a.nav-link-primary:hover {
 
 .hero-below-text {
   max-width: 70ch;
-  margin: 2rem auto;
-  padding: 1.5rem;
-  text-align: center;
-  font-size: 1.125rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1800px; /* match the width of your main site content */
+  margin: 0 auto; /* centers the section */
+  padding: 2rem 1rem; /* optional, smaller spacing */
+  gap: 2rem; /* space between the two columns */
+  background: #faf8f3; /* optional light background */
+}
+
+.two-columns {
+  display: flex;
+  gap: 3rem; /* spacing between text blocks */
+  margin: 0 auto;
+  align-items: center; /* vertically align text */
+}
+
+.two-columns .column.left {
+  flex: 1; /* equal width */
+}
+
+.two-columns .column.right {
+  flex: 1;
+}
+
+/* headline style */
+.two-columns .column.left h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: left;
+}
+
+/* body text style */
+.two-columns .column.right p {
+  font-size: 1rem;
   line-height: 1.6;
-  color: var(--color-text-secondary);
+  color: #222;
+  text-align: left;
+}
+
+/* responsive: stack on small screens */
+@media (max-width: 768px) {
+  .two-columns {
+    flex-direction: column;
+  }
+  .two-columns .column.left,
+  .two-columns .column.right {
+    width: 100%;
+  }
 }
 
 /*
@@ -748,7 +795,7 @@ a.nav-link-primary:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: var(--padding-small);
+  /* padding: var(--padding-small); */
   margin-bottom: 1rem;
 }
 .section-item {
@@ -827,12 +874,34 @@ a.nav-link-primary:hover {
   font-size: 1.25rem;
   font-weight: 700;
   margin: 0.25rem 0;
+  color: #f8f8ff;
 }
 
 .work-grid-project-category {
   font-size: 1rem;
   font-weight: 400;
-  color: var(--color-text-secondary);
+  color: #f8f8ff;
+}
+
+.project-details {
+  margin-top: 1rem; /* space between image and text */
+  text-align: left; /* align left (change to center if preferred) */
+}
+
+/* Project title */
+.project-details .work-grid-project-title {
+  font-size: 1.25rem; /* adjust size as needed */
+  font-weight: 700; /* bold like Firth */
+  margin: 0; /* remove default spacing */
+  color: #ffffff; /* black text (adjust if needed) */
+}
+
+/* Project category */
+.project-details .work-grid-project-category {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 0.25rem; /* little space under title */
+  color: #ffffff; /* softer gray text */
 }
 
 /* Project container for background and padding */
@@ -1394,7 +1463,7 @@ to keep your styles reusable and consistent.
 
   .hero {
     min-height: 100vh;
-    background-image: url(../assets/branding-images/marenbrophy-placeholderheader.jpg);
+    background-color: #131417;
   }
 
   .hero-headline-wrapper {
@@ -1476,7 +1545,7 @@ to keep your styles reusable and consistent.
   }
 
   .section-container {
-    width: 80%; /* Adjust this width for larger screens if needed */
+    width: 100%; /* Adjust this width for larger screens if needed */
     flex-direction: row;
   }
   .col-2 {
@@ -1565,6 +1634,7 @@ to keep your styles reusable and consistent.
 
   .main-work-section {
     padding: var(--padding-jumbo);
+    background-color: #000000;
   }
 }
 
