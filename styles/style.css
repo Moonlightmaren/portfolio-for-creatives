@@ -120,7 +120,7 @@
   --color-bg: #fdfdfd;
   --color-bg-about: #f5f5f5;
   --color-bg-footer: #f5f5f5;
-  --color-bg-holding-page: rgba(82, 0, 255, 0.6);
+  --color-bg-holding-page: rgba(255, 255, 255, 0.6);
   /* Headings */
   --h1-color: #000000;
   --h2-color: #000000;
@@ -147,11 +147,10 @@
   --color-nav-arrow-stroke: #5200ff;
   --color-nav-arrow-stroke-hover: #000;
   /* Components */
-  --color-bg-full-width: #f5f5f5;
+  --color-bg-full-width: #ffffff;
   --color-bg-project-description: #f5f5f5;
   --color-bg-sidebar-project: transparent;
-  --color-bg-sidebar-work: lemonchiffon;
-  --color-gradient-hero: linear-gradient(90deg, #ff00ff, #00ffff);
+  --color-bg-sidebar-work: rgb(255, 255, 255);
   --color-gradient-project-details: transparent;
 
   /* Special Elements */
@@ -338,7 +337,7 @@ svg {
 
 /* Large decorative elements (modals, banners) */
 .rounded-large {
-  border-radius: var(--radius-lg);
+  border-radius: 0;
 }
 
 /* Perfect circles (avatars, icons) */
@@ -402,7 +401,6 @@ h1 {
   font-size: 2.2rem;
   font-family: var(--font-family-heading);
   line-height: 1.2;
-  margin-bottom: 1rem;
   color: var(--h1-color);
   font-weight: 800;
 }
@@ -472,7 +470,8 @@ em {
   color: var(--color-overlay-primary); /* Uses your brand's dominant color */
   max-width: 40ch; /* Optimal line length for readability (~40 characters) */
   text-wrap: balance; /* Prevents awkward line breaks (like elegant typography) */
-  margin-inline: auto; /* Horizontally centers the text in its container */
+  text-wrap: balance;
+  margin-inline: 0; /* Horizontally centers the text in its container */
   text-align: left;
 }
 
@@ -514,14 +513,7 @@ em {
 /* 📂 Project grid title — used in grid view (like a portfolio gallery) */
 .work-grid-project-title {
   font-size: 2.875rem;
-  color: var(--color-text-work-grid-title);
-}
-
-.work-grid-project-subtitle {
-  font-size: 0.9rem;
-  font-weight: 400;
-  margin: 0.2em 0;
-  opacity: 0.8;
+  color: #000;
 }
 
 /* 🏷️ Project category label — displays the type or role of the project */
@@ -670,11 +662,16 @@ a.nav-link-primary:hover {
   display: flex;
   flex-direction: column;
   flex: 1;
-  gap: 3rem;
-  align-items: center;
+  gap: 1.5rem;
+  align-items: flex-start;
   justify-content: center;
   padding: var(--padding-small);
-  text-align: center; /* Keeps text centered */
+  text-align: left; /* Keeps text centered */
+  margin-top: 3rem;
+}
+
+.name-hero-logo {
+  width: 1;
 }
 
 .hero-icon {
@@ -693,6 +690,16 @@ a.nav-link-primary:hover {
   flex-direction: row;
   justify-content: space-between;
   padding: var(--padding-small);
+}
+
+.hero-below-text {
+  max-width: 70ch;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
 }
 
 /*
@@ -776,7 +783,7 @@ a.nav-link-primary:hover {
 .project-wrapper,
 .work-sidebar-wrapper {
   padding: var(
-    --padding-tiny
+    --padding-medium
   ); /* Padding to keep content from touching edges */
 }
 
@@ -809,6 +816,23 @@ a.nav-link-primary:hover {
   width: 100%;
   height: auto;
   position: relative; /* Needed to position the overlay */
+}
+
+.project-details-text {
+  margin-top: 0.75rem;
+  text-align: left; /* or left, depending on your style */
+}
+
+.work-grid-project-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0.25rem 0;
+}
+
+.work-grid-project-category {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-text-secondary);
 }
 
 /* Project container for background and padding */
@@ -1370,6 +1394,7 @@ to keep your styles reusable and consistent.
 
   .hero {
     min-height: 100vh;
+    background-image: url(../assets/branding-images/marenbrophy-placeholderheader.jpg);
   }
 
   .hero-headline-wrapper {
