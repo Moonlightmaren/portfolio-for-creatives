@@ -36,12 +36,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Eczar:wght@400;500;600;700;800&display=swap");
 
 /* Rubik Font (clean and modern for body text) */
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 /* Inter Font (great for readability and minimal design) */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 /*
 
@@ -110,7 +110,7 @@
 
   /* Core Colours */
   --color-text-primary: #222;
-  --color-text-secondary: #333;
+  --color-text-secondary: #d5f05d;
   --color-accent-primary: #5200ff;
   --color-accent-secondary: #ff057c;
   --color-overlay-primary: #000000;
@@ -123,15 +123,15 @@
   --color-bg-holding-page: rgba(255, 255, 255, 0.6);
   /* Headings */
   --h1-color: #000000;
-  --h2-color: #f25f42;
+  --h2-color: #ffffff;
   --h3-color: #91bf74;
-  --h4-color: #91bf74;
+  --h4-color: #d5f05d;
   --h5-color: #91bf74;
   --h6-color: #91bf74;
   /* Special Text Colours */
   --color-text-holding-title: #ebedf0;
   --color-text-project-category: #ffffff;
-  --color-text-project-description: #222;
+  --color-text-project-description: #ffffff;
   --color-text-project-sidebar: #222;
   --color-text-project-title: #91bf74;
   --color-text-work-grid-title: #ffffff;
@@ -317,6 +317,9 @@ svg {
 /* 📦 Padding Utilities */
 /* ----------------------------- */
 
+.padding-large {
+  padding: var(--padding-small); /* Adjusted for mobile use */
+}
 .padding-jumbo {
   padding: var(--padding-small); /* Adjusted for mobile use */
 }
@@ -450,6 +453,7 @@ p {
   font-size: 1rem;
   line-height: 1.3;
   margin-bottom: 1rem;
+  color: #f5f5f5;
 }
 
 strong {
@@ -627,14 +631,16 @@ a.nav-link-primary:hover {
 
 .hero {
   width: 100%;
-  min-height: 80vh; /* Takes up most of the screen height */
+  min-height: 5vh; /* Takes up most of the screen height */
   display: flex;
   flex-direction: column;
   background: url(../assets/branding-images/maren-brophy-herobackground.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+  background-color: #000000;
 }
+
 .hero-header {
   min-height: 6rem; /* Space reserved for logo + nav */
 }
@@ -662,20 +668,28 @@ a.nav-link-primary:hover {
 }
 
 .hero-headline-wrapper {
-  width: 100%;
   display: flex;
   flex-direction: column;
-  flex: 1;
-  gap: 1.5rem;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  padding: var(--padding-small);
-  text-align: left; /* Keeps text centered */
+  width: 100%;
   margin-top: 3rem;
 }
 
+/* The white rules */
+.hero-line {
+  width: 1626px; /* adjust width as desired */
+  height: 2px; /* thickness of the line */
+  background-color: white; /* color of the rule */
+  max-width: 1626px; /* prevents them from getting too wide */
+}
+
+/* Optional: slight animation or scaling effect */
 .name-hero-logo {
-  width: 1;
+  max-width: 1626px;
+  height: auto;
+  margin: 56px; /* equal spacing above and below the logo */
+  display: block;
 }
 
 .hero-icon {
@@ -701,10 +715,9 @@ a.nav-link-primary:hover {
   flex-wrap: wrap;
   justify-content: space-between;
   max-width: 1800px; /* match the width of your main site content */
-  margin: 0 auto; /* centers the section */
   padding: 2rem 1rem; /* optional, smaller spacing */
   gap: 2rem; /* space between the two columns */
-  background: #faf8f3; /* optional light background */
+  background: #000000; /* optional light background */
 }
 
 .two-columns {
@@ -734,7 +747,7 @@ a.nav-link-primary:hover {
 .two-columns .column.right p {
   font-size: 1rem;
   line-height: 1.6;
-  color: #222;
+  color: #ffffff;
   text-align: left;
 }
 
@@ -1028,7 +1041,7 @@ a.nav-link-primary:hover {
   grid-template-columns: 1fr; /* Single column layout */
   grid-gap: 3rem; /* Consistent spacing between sections */
   min-height: auto; /* Allows footer to expand based on content, no fixed height */
-  background: var(--color-bg-footer); /* Using CSS variable for theming */
+  background: #148b6d; /* Using CSS variable for theming */
   padding: var(--padding-small); /* Internal spacing */
 
   /* Note: Using 'fr' units ensures proper scaling across devices */
@@ -1065,17 +1078,29 @@ a.nav-link-primary:hover {
 /* ------------------------------- */
 /* 📜 Reusable footer list styles */
 /* ------------------------------- */
-.footer-list {
-  margin-bottom: 2rem;
+.footer-contact-social {
+  display: flex;
+  flex-direction: column; /* keeps h2 on top of icons */
 }
-.footer-awards-list {
-  margin-bottom: 2rem;
-}
-.footer-works-list {
-  margin-bottom: 2rem;
-}
+
 .footer-socials-list {
-  margin-bottom: 2rem;
+  display: flex; /* row layout */
+  gap: 1rem; /* spacing between icons */
+}
+
+.footer-social-item a {
+  display: inline-block;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.footer-social-item a:hover {
+  transform: scale(1.1);
+  opacity: 0.85;
+}
+
+.footer-social-icon {
+  width: 3rem;
+  height: auto;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -1419,6 +1444,22 @@ to keep your styles reusable and consistent.
 
 /* Switch from mobile to desktop navigation */
 
+/* 📱 Responsive adjustment for smaller screens */
+@media (max-width: 768px) {
+  .name-hero-logo {
+    max-width: 500px; /* smaller logo */
+  }
+
+  .hero-line {
+    width: 90%; /* slightly longer lines */
+    height: 1.5px;
+  }
+
+  .hero-logo-group {
+    gap: 0.75rem; /* tighter vertical spacing */
+  }
+}
+
 @media (min-width: 992px) {
   /* TODO: Add or adjust styles here for large devices. */
 
@@ -1453,6 +1494,10 @@ to keep your styles reusable and consistent.
     width: 70%;
     padding: var(--padding-small);
   }
+
+  .padding-large {
+    padding: var(--padding-large); /* Adjusted for mobile use */
+  }
   .padding-jumbo {
     padding: var(--padding-jumbo);
   }
@@ -1462,15 +1507,13 @@ to keep your styles reusable and consistent.
   }
 
   .hero {
-    min-height: 100vh;
-    background-color: #131417;
   }
 
   .hero-headline-wrapper {
-    padding-top: var(--padding-jumbo);
-    padding-bottom: var(--padding-jumbo);
-    padding-left: var(--padding-ultra);
-    padding-right: var(--padding-ultra);
+    padding-top: var(--padding-tiny);
+    padding-bottom: var(--padding-tiny);
+    padding-left: var(--padding-tiny);
+    padding-right: var(--padding-tiny);
   }
   .error-headline-wrapper {
     padding-top: var(--padding-small);
@@ -1491,6 +1534,20 @@ to keep your styles reusable and consistent.
   }
 
   /* Grayscale filter with full-colour on hover and tap */
+
+  /* ------------------------------- */
+  /* 🎞️ Image Hover - Color Reveal Effect */
+  /* ------------------------------- */
+
+  img.rounded-large {
+    filter: grayscale(100%) brightness(90%); /* Start: black & white and slightly dark */
+    transition: filter 0.5s ease-in-out, transform 0.5s ease-in-out; /* Smooth animation */
+  }
+
+  img.rounded-large:hover {
+    filter: grayscale(0%) brightness(100%); /* Hover: full color and normal brightness */
+    transform: scale(1.02); /* Optional subtle zoom-in for depth */
+  }
 
   .work-page-grid-item a.grayscale img {
     filter: grayscale(100);
