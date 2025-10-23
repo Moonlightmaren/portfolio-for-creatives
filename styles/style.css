@@ -556,7 +556,7 @@ a:hover {
 
 /* Focus — when a link is focused (keyboard navigation) */
 a:focus {
-  outline: 1px solid var(--color-accent-primary);
+  /* outline: 1px solid var(--color-accent-primary); */
 }
 
 /* Active — when the link is actively being clicked or tapped */
@@ -1042,7 +1042,7 @@ a.nav-link-primary:hover {
 .about-grid-image {
   grid-column: 1 / 1; /* Image spans the first column */
   grid-row: 1 / 1; /* Image spans the first row */
-  width: 80%; /* adjust this to make the grid area smaller */
+  width: 100%; /* adjust this to make the grid area smaller */
 }
 
 /* Text section in the About page grid */
@@ -1091,13 +1091,10 @@ a.nav-link-primary:hover {
   grid-column: 1 / 2; /* Full width (single column) */
   grid-row: 1 / 2;
 }
-.footer-highlights {
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
-}
+
 .footer-contact-social {
   grid-column: 1 / 2;
-  grid-row: 4 / 4;
+  grid-row: 2/ 3;
 }
 /* -------------------------------------------------------------------------- */
 /* 🌊 FULL-WIDTH BOTTOM SECTION                                               */
@@ -1105,9 +1102,10 @@ a.nav-link-primary:hover {
 /* -------------------------------------------------------------------------- */
 .footer-full-width {
   grid-column: 1 / 2;
-  grid-row: 4 / 5;
+  grid-row: 3 / 4;
   text-align: center; /* Center copyright text */
   align-self: end; /* Push to bottom */
+  text-align: left;
 }
 
 /* ------------------------------- */
@@ -1540,9 +1538,6 @@ to keep your styles reusable and consistent.
     /* TODO: Adjust the width of the logo on large devices here. */
   }
 
-  .hero {
-  }
-
   .hero-headline-wrapper {
     padding-top: var(--padding-tiny);
     padding-bottom: var(--padding-tiny);
@@ -1685,16 +1680,11 @@ to keep your styles reusable and consistent.
     grid-row: 1 / 2;
   }
 
-  /* Column 2: Awards & Works */
-  .footer-highlights {
-    grid-row: 1 / 2;
-    grid-column: 2 / 3;
-  }
-
   /* Column 3: Contact & Social */
   .footer-contact-social {
+    grid-column: 3 / 4;
     grid-row: 1 / 2;
-    grid-column: 4 / 4;
+    align-items: flex-end;
   }
 
   /* ------------------------------- */

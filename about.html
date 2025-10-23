@@ -27,29 +27,29 @@
   <body class="about-page">
     <header class="hero-header">
       <ul class="nav-branding">
-          <li class="nav-branding-logo">
-            <a href="index.html">
-              <img
-                src="assets/branding-images/Asset 15.svg"
-                alt="Your portfolio logo"
-              />
-            </a>
-          </li>
-          <li class="nav-branding-group">
-            <a href="work.html" class="nav-branding-item nav-link-primary"
-              >Work</a
-            >
-            <a href="about.html" class="nav-branding-item nav-link-primary"
-              >About</a
-            >
-            <a
-              href="illustration.html"
-              class="nav-branding-item nav-link-primary"
-            >
-              Illustration
-            </a>
-          </li>
-        </ul>
+        <li class="nav-branding-logo">
+          <a href="index.html">
+            <img
+              src="assets/branding-images/maren-brophy-logo.svg"
+              alt="Your portfolio logo"
+            />
+          </a>
+        </li>
+        <li class="nav-branding-group">
+          <a href="work.html" class="nav-branding-item nav-link-primary"
+            >Work</a
+          >
+          <a href="about.html" class="nav-branding-item nav-link-primary"
+            >About</a
+          >
+          <a
+            href="illustration.html"
+            class="nav-branding-item nav-link-primary"
+          >
+            Illustration
+          </a>
+        </li>
+      </ul>
     </header>
     <ul class="about-grid">
       <li class="about-grid-image">
@@ -63,47 +63,72 @@
         </figure>
       </li>
       <li class="about-grid-text">
-
         <p class="about-info">
-          Hi, I’m Maren — a Vancouver-based graphic designer and illustrator. I focus on creating work that blends strategy, concept, and storytelling, making design that’s both thoughtful and engaging. I’m drawn to projects that challenge me to think conceptually and tell a story through visuals, crafting work that connects with people and leaves a lasting impression. Beyond design, feel free to ask me about my tea recommendations, bird-watching tips, or my favorite obscure animated film.
+          Hi, I’m Maren — a Vancouver-based graphic designer and illustrator. I
+          focus on creating work that blends strategy, concept, and
+          storytelling, making design that’s both thoughtful and engaging. I’m
+          drawn to projects that challenge me to think conceptually and tell a
+          story through visuals, crafting work that connects with people and
+          leaves a lasting impression. Beyond design, feel free to ask me about
+          my tea recommendations, bird-watching tips, or my favorite obscure
+          animated film.
         </p>
-
       </li>
     </ul>
     <ul class="footer-global">
-      <div class="footer-tagline">
+      <li class="footer-tagline">
         <!-- Update with your real email address -->
-        <a href="marenrose2004@gmail.com" class="nav-link-primary"></a>
-         <h4>marenrose2004@gmail.com</h4>
-         </a
-        >
-      </div>
-
-
-     <div class="footer-contact-social">
-    <h4>Find me elsewhere</h4>
-    <ul class="footer-socials-list">
-      <li class="footer-social-item">
-        <a href="https://www.behance.net/yourprofile" target="_blank" rel="noopener">
-          <img src="assets/icons/behance.svg" alt="Behance" class="footer-social-icon" />
+        <a href="marenrose2004@gmail.com" class="nav-link-primary">
+          <h4>marenrose2004@gmail.com</h4>
         </a>
       </li>
-      <li class="footer-social-item">
-        <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener">
-          <img src="assets/icons/instagram.svg" alt="Instagram" class="footer-social-icon" />
-        </a>
-      </li>
-      <li class="footer-social-item">
-        <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener">
-          <img src="assets/icons/LinkedIn.svg" alt="LinkedIn" class="footer-social-icon" />
-        </a>
-      </li>
-    </ul>
-  </div>
-</footer>
 
+      <li class="footer-contact-social">
+        <h4>Find me elsewhere</h4>
+        <ul class="footer-socials-list">
+          <li class="footer-social-item">
+            <a
+              href="https://www.behance.net/yourprofile"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="assets/icons/behance.svg"
+                alt="Behance"
+                class="footer-social-icon"
+              />
+            </a>
+          </li>
+          <li class="footer-social-item">
+            <a
+              href="https://instagram.com/yourprofile"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="assets/icons/instagram.svg"
+                alt="Instagram"
+                class="footer-social-icon"
+              />
+            </a>
+          </li>
+          <li class="footer-social-item">
+            <a
+              href="https://linkedin.com/in/yourprofile"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="assets/icons/LinkedIn.svg"
+                alt="LinkedIn"
+                class="footer-social-icon"
+              />
+            </a>
+          </li>
+        </ul>
+      </li>
 
-      <div class="footer-full-width">
+      <li class="footer-full-width">
         <p><a href="#top">Smooth scroll to the top</a></p>
         <p class="footer-fineprint">
           &copy; <span id="copyright-years">2024-</span>. Hand-coded with care
@@ -113,25 +138,23 @@
           document.getElementById("copyright-years").textContent +=
             new Date().getFullYear();
         </script>
-      </div>
+      </li>
     </ul>
+
+    <script src="js/responsive-nav.js"></script>
+
+    <script>
+      // Sticky header effect
+      const heroHeader = document.querySelector(".hero-header");
+      const scrollOffset = heroHeader.offsetTop;
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > scrollOffset) {
+          heroHeader.classList.add("scrolled");
+        } else {
+          heroHeader.classList.remove("scrolled");
+        }
+      });
+    </script>
   </body>
-</html>
-
-<script src="js/responsive-nav.js"></script>
-
-<script>
-  // Sticky header effect
-  const heroHeader = document.querySelector('.hero-header');
-  const scrollOffset = heroHeader.offsetTop;
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > scrollOffset) {
-      heroHeader.classList.add('scrolled');
-    } else {
-      heroHeader.classList.remove('scrolled');
-    }
-  });
-</script>
-</body>
 </html>
