@@ -104,9 +104,9 @@
 
 :root {
   /* Typography */
-  --font-family-body: "Inter", sans-serif;
-  --font-family-heading: "Poppins" sans-serif;
-  --font-family-project-title: "Poppins" sans-serif;
+  --font-family-body: "Work Sans", sans-serif;
+  --font-family-heading: "Work Sans" sans-serif;
+  --font-family-project-title: "Work Sans" sans-serif;
 
   /* Core Colours */
   --color-text-primary: #222;
@@ -136,12 +136,12 @@
   --color-text-project-title: #91bf74;
   --color-text-work-grid-title: #ffffff;
   /* Link States */
-  --color-link: #5200ff;
+  --color-link: #148b6d;
   --color-link-hover: #111;
-  --color-link-visited: #5200ff;
+  --color-link-visited: #148b6d;
   /* Navigation */
   --color-nav-link: #5200ff;
-  --color-nav-link-hover: #321575;
+  --color-nav-link-hover: #d5f05d;
   --color-nav-arrow: #5200ff;
   --color-nav-arrow-hover: #000;
   --color-nav-arrow-stroke: #5200ff;
@@ -414,6 +414,8 @@ h2 {
   line-height: 1.2;
   margin-bottom: 1rem;
   color: var(--h2-color);
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
 h3 {
@@ -426,7 +428,7 @@ h3 {
 h4 {
   font-size: 1.2rem;
   line-height: 1.2;
-  margin-bottom: 1rem;
+  margin-bottom: 1.4rem;
   color: var(--h4-color);
 }
 
@@ -435,6 +437,7 @@ h5 {
   line-height: 1.2;
   margin-bottom: 1rem;
   color: var(--h5-color);
+  font-weight: 400;
 }
 
 h6 {
@@ -512,12 +515,6 @@ em {
   -webkit-background-clip: text;
   color: transparent;
   font-weight: bold;
-}
-
-/* 📂 Project grid title — used in grid view (like a portfolio gallery) */
-.work-grid-project-title {
-  font-size: 2.875rem;
-  color: #000;
 }
 
 /* 🏷️ Project category label — displays the type or role of the project */
@@ -642,15 +639,40 @@ a.nav-link-primary:hover {
 }
 
 .hero-header {
-  min-height: 6rem; /* Space reserved for logo + nav */
+  position: relative; /* keep your original positioning */
+  min-height: 6rem;
+  width: 100%;
+  z-index: 1000;
 }
 
+/* keep your original flex layout */
 .nav-branding {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: var(--padding-small);
+  padding: var(--padding-medium);
   align-items: center;
+  width: 100%;
+}
+
+.hero-header {
+  position: relative;
+  min-height: 6rem;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 1); /* solid black by default */
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+/* sticky state: black background when fixed */
+.hero-header.scrolled {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8); /* 80% opaque black */
+  backdrop-filter: blur(6px); /* optional: adds a nice frosted-glass feel */
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
 }
 
 .nav-branding-group {
@@ -678,10 +700,9 @@ a.nav-link-primary:hover {
 
 /* The white rules */
 .hero-line {
-  width: 1626px; /* adjust width as desired */
+  width: 100vw;
   height: 2px; /* thickness of the line */
   background-color: white; /* color of the rule */
-  max-width: 1626px; /* prevents them from getting too wide */
 }
 
 /* Optional: slight animation or scaling effect */
@@ -714,7 +735,7 @@ a.nav-link-primary:hover {
   max-width: 70ch;
   flex-wrap: wrap;
   justify-content: space-between;
-  max-width: 1800px; /* match the width of your main site content */
+  max-width: 2000px; /* match the width of your main site content */
   padding: 2rem 1rem; /* optional, smaller spacing */
   gap: 2rem; /* space between the two columns */
   background: #000000; /* optional light background */
@@ -738,7 +759,6 @@ a.nav-link-primary:hover {
 /* headline style */
 .two-columns .column.left h2 {
   font-size: 2rem;
-  font-weight: 700;
   line-height: 1.3;
   text-align: left;
 }
@@ -836,6 +856,7 @@ a.nav-link-primary:hover {
 .main-work-section {
   flex: 1;
   padding: var(--padding-small);
+  background-color: #000000;
 }
 
 /* Padding around work grid and project page */
@@ -883,37 +904,45 @@ a.nav-link-primary:hover {
   text-align: left; /* or left, depending on your style */
 }
 
-.work-grid-project-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin: 0.25rem 0;
-  color: #f8f8ff;
+.work-grid-project-category {
+  display: flex;
+  flex-wrap: wrap; /* Wrap boxes to new line if needed */
+  justify-content: flex-start; /* Align boxes to the left */
 }
 
-.work-grid-project-category {
-  font-size: 1rem;
-  font-weight: 400;
-  color: #f8f8ff;
+.work-grid-project-category span {
+  display: inline-block; /* Fit each word */
+  padding: 0.25rem 0.75rem; /* Space inside the box */
+  border: 1px solid #ffffff; /* Outline */
+  border-radius: 1rem; /* Rounded corners */
+  font-size: 0.875rem; /* Slightly smaller text */
+  font-weight: 500;
+  color: #ffffff;
+  background: transparent;
+  margin-right: 1rem; /* Space between words */
+  margin-top: 0.5rem; /* Optional vertical spacing */
 }
 
 .project-details {
-  margin-top: 1rem; /* space between image and text */
+  margin-top: 1.3rem; /* space between image and text */
   text-align: left; /* align left (change to center if preferred) */
 }
 
 /* Project title */
 .project-details .work-grid-project-title {
-  font-size: 1.25rem; /* adjust size as needed */
-  font-weight: 700; /* bold like Firth */
+  font-size: 1.8rem; /* adjust size as needed */
   margin: 0; /* remove default spacing */
   color: #ffffff; /* black text (adjust if needed) */
+  display: flex;
+  flex-direction: column; /* stack title and categories */
+  align-items: flex-start; /* left-align everything */
 }
 
 /* Project category */
 .project-details .work-grid-project-category {
   font-size: 1rem;
   font-weight: 400;
-  margin-top: 0.25rem; /* little space under title */
+  margin-top: 0.3rem; /* little space under title */
   color: #ffffff; /* softer gray text */
 }
 
@@ -1003,22 +1032,27 @@ a.nav-link-primary:hover {
 .about-grid {
   display: grid; /* Set to grid layout */
   grid-template-columns: 1fr; /* Single column layout for mobile and smaller screens */
-  grid-gap: 3rem; /* Space between grid items */
-  background: var(--color-bg-about); /* Background color for the section */
+  grid-gap: 5rem; /* Space between grid items */
+  background: #000; /* Background color for the section */
   padding: var(--padding-small); /* Padding around the grid */
   flex: 1; /* Flex-grow to take up available space */
 }
 
 /* Image section in the About page grid */
 .about-grid-image {
-  grid-column: 1 / 2; /* Image spans the first column */
-  grid-row: 1 / 2; /* Image spans the first row */
+  grid-column: 1 / 1; /* Image spans the first column */
+  grid-row: 1 / 1; /* Image spans the first row */
+  width: 80%; /* adjust this to make the grid area smaller */
 }
 
 /* Text section in the About page grid */
 .about-grid-text {
   grid-column: 1 / 2; /* Text spans the first column */
   grid-row: 2 / 3; /* Text spans the second row */
+}
+
+.about-info {
+  font-size: 2rem;
 }
 
 /* 
@@ -1043,6 +1077,7 @@ a.nav-link-primary:hover {
   min-height: auto; /* Allows footer to expand based on content, no fixed height */
   background: #148b6d; /* Using CSS variable for theming */
   padding: var(--padding-small); /* Internal spacing */
+  flex-direction: column;
 
   /* Note: Using 'fr' units ensures proper scaling across devices */
 }
@@ -1062,7 +1097,7 @@ a.nav-link-primary:hover {
 }
 .footer-contact-social {
   grid-column: 1 / 2;
-  grid-row: 3 / 4;
+  grid-row: 4 / 4;
 }
 /* -------------------------------------------------------------------------- */
 /* 🌊 FULL-WIDTH BOTTOM SECTION                                               */
@@ -1244,7 +1279,7 @@ a.nav-link-primary:hover {
 /* Project details section */
 .project-details {
   width: 100%;
-  padding: var(--padding-small);
+  padding: 0;
   background: var(
     --color-gradient-project-details
   ); /* TODO: Remove gradient background if you prefer a simpler design */
@@ -1451,7 +1486,6 @@ to keep your styles reusable and consistent.
   }
 
   .hero-line {
-    width: 90%; /* slightly longer lines */
     height: 1.5px;
   }
 
@@ -1482,7 +1516,7 @@ to keep your styles reusable and consistent.
   }
 
   h2 {
-    font-size: 2.25rem;
+    font-size: 3rem;
   }
 
   h3 {
@@ -1563,7 +1597,7 @@ to keep your styles reusable and consistent.
   .portfolio,
   .project-wrapper,
   .work-sidebar-wrapper {
-    padding: var(--padding-small);
+    padding: 0;
   }
 
   /* Project Page Flex Direction on Large Devices */
@@ -1660,7 +1694,7 @@ to keep your styles reusable and consistent.
   /* Column 3: Contact & Social */
   .footer-contact-social {
     grid-row: 1 / 2;
-    grid-column: 3 / 4;
+    grid-column: 4 / 4;
   }
 
   /* ------------------------------- */
@@ -1691,7 +1725,6 @@ to keep your styles reusable and consistent.
 
   .main-work-section {
     padding: var(--padding-jumbo);
-    background-color: #000000;
   }
 }
 
