@@ -124,31 +124,31 @@
   /* Headings */
   --h1-color: #000000;
   --h2-color: #ffffff;
-  --h3-color: #91bf74;
+  --h3-color: #ffffff;
   --h4-color: #d5f05d;
   --h5-color: #91bf74;
   --h6-color: #91bf74;
   /* Special Text Colours */
   --color-text-holding-title: #ebedf0;
   --color-text-project-category: #ffffff;
-  --color-text-project-description: #ffffff;
+  --color-text-project-description: #000000;
   --color-text-project-sidebar: #222;
   --color-text-project-title: #91bf74;
   --color-text-work-grid-title: #ffffff;
   /* Link States */
   --color-link: #148b6d;
-  --color-link-hover: #111;
+  --color-link-hover: #ffffff;
   --color-link-visited: #148b6d;
   /* Navigation */
   --color-nav-link: #5200ff;
   --color-nav-link-hover: #d5f05d;
   --color-nav-arrow: #5200ff;
-  --color-nav-arrow-hover: #000;
-  --color-nav-arrow-stroke: #5200ff;
+  --color-nav-arrow-hover: #ffffff;
+  --color-nav-arrow-stroke: #ffffff;
   --color-nav-arrow-stroke-hover: #000;
   /* Components */
-  --color-bg-full-width: #ffffff;
-  --color-bg-project-description: #f5f5f5;
+  --color-bg-full-width: #000000;
+  --color-bg-project-description: #000000;
   --color-bg-sidebar-project: transparent;
   --color-bg-sidebar-work: rgb(255, 255, 255);
   --color-gradient-project-details: transparent;
@@ -196,14 +196,6 @@
 /* ------------------------------- */
 
 /* Add border-box sizing to make layout easier and enable smooth scrolling behavior */
-html {
-  box-sizing: border-box; /* Makes sure padding and borders don't add extra width to elements */
-  scroll-behavior: smooth; /* Adds smooth scrolling between sections */
-  cursor: url("../assets/temp/up-cursor.png"), auto !important; /* Custom cursor (change the URL below to use your own) */
-
-  /* TODO: Replace the URL above to add a custom cursor. 
-     If you want to use the default browser cursor, just delete this line. */
-}
 
 /* Ensure all elements, including pseudo-elements, follow border-box sizing */
 *,
@@ -215,7 +207,7 @@ html {
 body {
   font-family: var(--font-family-body);
   color: var(--color-text-primary);
-  background: var(--color-bg);
+  background: #000;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -456,7 +448,7 @@ p {
   font-size: 1rem;
   line-height: 1.3;
   margin-bottom: 1rem;
-  color: #f5f5f5;
+  color: #ffffff;
 }
 
 strong {
@@ -1307,7 +1299,71 @@ a.nav-link-primary:hover {
   padding: 0;
 }
 
-/*
+.navigation-arrow {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+}
+
+.arrow-circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  transform: rotate(-90deg); /* start at top */
+}
+
+.arrow-circle circle {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 2;
+  stroke-linecap: butt; /* smooth ends */
+  stroke-dasharray: 176; /* circumference ~ 2πr (2*π*28 ≈ 176) */
+  stroke-dashoffset: 176; /* start fully hidden */
+  transition: stroke-dashoffset 0.6s ease;
+}
+
+.navigation-arrow:hover .arrow-circle circle {
+  stroke-dashoffset: 0; /* draws full circle */
+}
+
+/* Top project category H3 pills on the left only */
+.project-1 .project-description-container:first-of-type .project-title h3 {
+  display: inline-block; /* pill shape */
+  padding: 0.25rem 0.75rem;
+  border: 1px solid #ffffff;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #ffffff;
+  background: transparent;
+  margin: 0;
+  margin-top: 0.8rem;
+}
+
+/* Keep the two-column layout intact */
+.project-1 .project-description-container:first-of-type {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem; /* space between H3 column and description */
+  align-items: flex-start;
+}
+
+.project-1 .project-description-container:first-of-type .project-title {
+  flex: 1; /* left column for pills */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.project-1 .project-description-container:first-of-type .project-description {
+  flex: 2; /* right column for description text */
+  text-align: left;
+}
 
 ██████  ██       ██████   ██████      ██ ██████  ███████ ███████ ██    ██ ███    ███ ███████ 
 ██   ██ ██      ██    ██ ██          ██  ██   ██ ██      ██      ██    ██ ████  ████ ██      
