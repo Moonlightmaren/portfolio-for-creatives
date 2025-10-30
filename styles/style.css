@@ -122,7 +122,7 @@
   --color-bg-footer: #f5f5f5;
   --color-bg-holding-page: rgba(255, 255, 255, 0.6);
   /* Headings */
-  --h1-color: #000000;
+  --h1-color: #ffffff;
   --h2-color: #ffffff;
   --h3-color: #ffffff;
   --h4-color: #d5f05d;
@@ -190,12 +190,18 @@
 ██      ██  ██████  ██████  ██ ███████ ███████     ██      ██ ██   ██ ███████    ██    
 */
 
-/* ------------------------------- */
 /* 📱 Responsive Design for Small Devices (Portrait Phones) */
 /* No media query needed for small devices like phones under 576px. This is the default in Bootstrap. */
 /* ------------------------------- */
 
 /* Add border-box sizing to make layout easier and enable smooth scrolling behavior */
+html {
+  box-sizing: border-box; /* Makes sure padding and borders don't add extra width to elements */
+  scroll-behavior: smooth; /* Adds smooth scrolling between sections */
+
+  /* TODO: Replace the URL above to add a custom cursor. 
+     If you want to use the default browser cursor, just delete this line. */
+}
 
 /* Ensure all elements, including pseudo-elements, follow border-box sizing */
 *,
@@ -630,13 +636,6 @@ a.nav-link-primary:hover {
   background-color: #000000;
 }
 
-.hero-header {
-  position: relative; /* keep your original positioning */
-  min-height: 6rem;
-  width: 100%;
-  z-index: 1000;
-}
-
 /* keep your original flex layout */
 .nav-branding {
   display: flex;
@@ -648,22 +647,13 @@ a.nav-link-primary:hover {
 }
 
 .hero-header {
-  position: relative;
-  min-height: 6rem;
-  width: 100%;
-  z-index: 1000;
-  background-color: rgba(0, 0, 0, 1); /* solid black by default */
-  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
-}
-
-/* sticky state: black background when fixed */
-.hero-header.scrolled {
+  /* position: relative; */
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.8); /* 80% opaque black */
-  backdrop-filter: blur(6px); /* optional: adds a nice frosted-glass feel */
+  height: 8rem;
+  width: 100%;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.8);
+  /* solid black by default */
   transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
 }
 
@@ -1213,12 +1203,18 @@ a.nav-link-primary:hover {
 .project-wrapper-full-width {
   width: 100%;
   padding: var(--padding-small);
+  background: hotpink;
+  border: 2px solid yellow;
+  position: relative;
+  top: 8rem;
 }
 
 /* Container for the project content with full-width display */
 .project-full-width {
   width: 100%;
   margin-bottom: 2rem;
+  background: lightblue;
+  border: 2px solid white;
 }
 
 /* Sidebar Styles */
@@ -1247,7 +1243,8 @@ a.nav-link-primary:hover {
   justify-content: flex-start;
   flex-direction: column;
   background: var(--color-bg-project-description);
-  padding: var(--padding-small);
+  /* padding: var(--padding-small); */
+  border: 4px solid yellow;
   width: 100%;
   margin-bottom: 1rem; /* Space below the description */
 }
@@ -1329,40 +1326,6 @@ a.nav-link-primary:hover {
 
 .navigation-arrow:hover .arrow-circle circle {
   stroke-dashoffset: 0; /* draws full circle */
-}
-
-/* Top project category H3 pills on the left only */
-.project-1 .project-description-container:first-of-type .project-title h3 {
-  display: inline-block; /* pill shape */
-  padding: 0.25rem 0.75rem;
-  border: 1px solid #ffffff;
-  border-radius: 1rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: #ffffff;
-  background: transparent;
-  margin: 0;
-  margin-top: 0.8rem;
-}
-
-/* Keep the two-column layout intact */
-.project-1 .project-description-container:first-of-type {
-  display: flex;
-  flex-direction: row;
-  gap: 2rem; /* space between H3 column and description */
-  align-items: flex-start;
-}
-
-.project-1 .project-description-container:first-of-type .project-title {
-  flex: 1; /* left column for pills */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.project-1 .project-description-container:first-of-type .project-description {
-  flex: 2; /* right column for description text */
-  text-align: left;
 }
 
 ██████  ██       ██████   ██████      ██ ██████  ███████ ███████ ██    ██ ███    ███ ███████ 
@@ -1661,9 +1624,14 @@ to keep your styles reusable and consistent.
   /* Project Full Width Styles */
 
   .project-wrapper-full-width {
-    padding: var(--padding-small) var(--padding-jumbo);
+    padding: var(--padding-jumbo);
   }
 
+  .test {
+    border: 20px solid orangered;
+    background: lightblue;
+    min-height: 100vh;
+  }
   /* Sidebar on Large Devices */
 
   .project-aside {
@@ -1692,6 +1660,7 @@ to keep your styles reusable and consistent.
   }
   .col-2 {
     width: 50%;
+    border: 1px solid white;
   }
 
   .project-navigation {
