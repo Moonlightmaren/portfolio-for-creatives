@@ -198,6 +198,7 @@
 html {
   box-sizing: border-box; /* Makes sure padding and borders don't add extra width to elements */
   scroll-behavior: smooth; /* Adds smooth scrolling between sections */
+  cursor: url("../assets/cursor-maren.png"), auto !important; /* Custom cursor (change the URL below to use your own) */
 
   /* TODO: Replace the URL above to add a custom cursor. 
      If you want to use the default browser cursor, just delete this line. */
@@ -692,31 +693,27 @@ a.nav-link-primary:hover {
   font-family: "Righteous", sans-serif;
   letter-spacing: 0.05em; /* optional tracking adjustment */
   transform: scaleY(0.9); /* makes text 80% as tall */
-  font-size: 12.7rem;
+  font-size: clamp(6rem, 11vw, 12.7rem);
   line-height: 12rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   width: 100%;
   text-transform: uppercase;
   padding: var(--padding-large);
+  background: darkblue;
 }
 
-.name-letter-1,
-.name-letter-2,
-.name-letter-3,
-.name-letter-4,
-.name-letter-5,
-.name-letter-6,
-.name-letter-7,
-.name-letter-8,
-.name-letter-9,
-.name-letter-10,
-.name-letter-11,
-.name-letter-12 {
-  border: 1px solid black;
+.first-name {
+  border: 2px solid red;
 }
-
+.space {
+  border: 2px solid red;
+  display: none;
+}
+.last-name {
+  border: 2px solid red;
+}
 .name-letter-1 {
   align-self: flex-start;
 }
@@ -1639,17 +1636,15 @@ to keep your styles reusable and consistent.
   .work-grid-project-category span {
     font-size: 0.7rem;
   }
-
-  .hero-name {
-    font-size: 5rem;
-    white-space: normal; /* ensures wrapping works */
-    line-height: 5rem;
-  }
 }
 
 @media (min-width: 992px) {
   /* TODO: Add or adjust styles here for large devices. */
 
+  .hero-name {
+    flex-direction: row;
+    white-space: normal; /* ensures wrapping works */
+  }
   .flex-row {
     flex-direction: row; /* Changes to row layout on larger screens */
   }
