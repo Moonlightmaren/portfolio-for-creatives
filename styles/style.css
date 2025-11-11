@@ -126,8 +126,8 @@
   --h2-color: #ffffff;
   --h3-color: #ffffff;
   --h4-color: #d5f05d;
-  --h5-color: #91bf74;
-  --h6-color: #91bf74;
+  --h5-color: #148b6d;
+  --h6-color: #148b6d;
   /* Special Text Colours */
   --color-text-holding-title: #ebedf0;
   --color-text-project-category: #ffffff;
@@ -136,9 +136,9 @@
   --color-text-project-title: #91bf74;
   --color-text-work-grid-title: #ffffff;
   /* Link States */
-  --color-link: #148b6d;
+  --color-link: #d5f05d;
   --color-link-hover: #ffffff;
-  --color-link-visited: #148b6d;
+  --color-link-visited: #ffffff;
   /* Navigation */
   --color-nav-link: #5200ff;
   --color-nav-link-hover: #d5f05d;
@@ -276,12 +276,6 @@ svg {
 .width-third,
 .width-two-thirds {
   width: 100%;
-}
-
-/* Adds a dashed border to help you see the box while you're designing */
-.border {
-  border: 1px dashed var(--color-accent-primary); /* This uses your custom accent color */
-  /* TODO: Delete this later – it’s just here to help you see the box while you work */
 }
 
 /* ---------------------- */
@@ -427,22 +421,22 @@ h3 {
 h4 {
   font-size: 1.2rem;
   line-height: 1.2;
-  margin-bottom: 1.4rem;
+  margin-bottom: 1rem;
   color: var(--h4-color);
 }
 
 h5 {
   font-size: 1.1rem;
   line-height: 1.2;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
   color: var(--h5-color);
   font-weight: 400;
 }
 
 h6 {
-  font-size: 1rem;
+  font-size: 0.9rem;
   line-height: 1.2;
-  margin-bottom: 1rem;
+  margin-bottom: 1.6rem;
   color: var(--h6-color);
 }
 
@@ -453,9 +447,10 @@ h6 {
 
 p {
   font-size: 1rem;
-  line-height: 1.2;
+  line-height: 1.4;
   margin-bottom: 1.3rem;
   color: #ffffff;
+  font-weight: 300;
 }
 
 strong {
@@ -643,6 +638,7 @@ a.nav-link-primary:hover {
   justify-content: space-between;
   padding: var(--padding-large);
   padding-bottom: var(--padding-medium);
+  padding-top: var(--padding-medium);
   align-items: center;
   width: 100%;
   /* solid black by default */
@@ -700,19 +696,20 @@ a.nav-link-primary:hover {
   justify-content: space-between;
   width: 100%;
   text-transform: uppercase;
-  padding: var(--padding-large);
-  background: darkblue;
+  padding-top: 0; /* or a smaller var like var(--padding-tiny) */
+  padding-bottom: 0;
+  padding-left: var(--padding-small);
 }
 
 .first-name {
-  border: 2px solid red;
+  margin-bottom: -6rem;
+  margin-top: -2.5rem;
 }
 .space {
-  border: 2px solid red;
   display: none;
 }
 .last-name {
-  border: 2px solid red;
+  margin-bottom: -2.5rem;
 }
 .name-letter-1 {
   align-self: flex-start;
@@ -744,6 +741,49 @@ a.nav-link-primary:hover {
   padding: 2rem 1rem; /* optional, smaller spacing */
   gap: 2rem; /* space between the two columns */
   background: #000000; /* optional light background */
+}
+
+.marquee-container {
+  height: 60px;
+  overflow: hidden;
+  line-height: 30px;
+  color: white;
+  position: relative;
+  border-top: 1px solid white; /* ← top line */
+  border-bottom: 1px solid white; /* ← bottom line */
+
+  .marquee {
+    top: 50%;
+    left: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    animation: marquee 30s linear infinite;
+    transform: translateY(-50%); /* adjust for perfect centering */
+  }
+
+  .marquee span {
+    margin-right: 40px; /* adjust space as you like */
+  }
+
+  .marquee2 {
+    top: 50%; /* center vertically */
+    animation-delay: 15s;
+    transform: translateY(-50%); /* perfectly center text between lines */
+  }
+  b {
+    padding-left: 10px;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -100%;
+  }
 }
 
 .two-columns {
@@ -961,9 +1001,9 @@ a.nav-link-primary:hover {
 
 .work-grid-project-category span {
   display: inline-block; /* Fit each word */
-  font-size: 0.875rem; /* Slightly smaller text */
-  font-weight: 500;
-  color: #d5f05d;
+  font-size: 1rem; /* Slightly smaller text */
+  font-weight: 300;
+  color: white;
   background: transparent;
   margin-right: 1rem; /* Space between words */
   margin-top: 0.5rem; /* Optional vertical spacing */
@@ -1250,6 +1290,7 @@ a.nav-link-primary:hover {
 .footer-fineprint {
   font-size: 0.875rem; /* Slightly smaller for disclaimers or captions */
   color: var(--color-text-secondary); /* Themed color */
+  font-weight: 300;
 }
 
 /* New item badges */
@@ -1297,14 +1338,17 @@ a.nav-link-primary:hover {
   width: 100%;
   padding: var(--padding-small);
   background: #000;
-  position: relative;
-  top: 8rem;
+  margin-top: 2rem;
+}
+
+.full-image-project {
+  margin-top: 8rem;
 }
 
 /* Container for the project content with full-width display */
 .project-full-width {
   width: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   background: #000;
 }
 
@@ -1330,22 +1374,26 @@ a.nav-link-primary:hover {
 /* Container for project description */
 .project-description-container {
   display: flex;
-  flex-direction: column; /* stack children vertically */
-  align-items: flex-start; /* left-align children */
+  flex-direction: column; /* keep vertical stacking */
+  align-items: flex-start; /* aligns everything to the left */
   background: var(--color-bg-project-description);
   width: 100%;
-  margin-bottom: 1rem;
-  gap: 0.5rem; /* optional: spacing between stacked items */
+  gap: 0.5rem;
+  padding: 0; /* remove padding to make flush left */
+}
+
+.work-header {
+  margin-bottom: 2rem;
 }
 
 .project-descriptors {
-  display: block; /* stack vertically within the column */
-  padding: 0.3em;
-  background-color: transparent;
-  color: #d5f05d;
-  line-height: 1;
-  width: fit-content; /* hug the text tightly */
+  display: block;
+  padding: 0.3em 0; /* vertical spacing to center text */
+  color: white;
+  line-height: 1.2;
   font-size: 1.2rem;
+  width: 100%; /* stretch lines to edges of container */
+  box-sizing: border-box;
 }
 
 /* Column styles for two-column layouts */
@@ -1371,60 +1419,31 @@ a.nav-link-primary:hover {
   ); /* TODO: Remove gradient background if you prefer a simpler design */
 }
 
-/* Previous/Next Arrow Styles */
-
 .project-navigation {
   display: flex;
-  flex-direction: row;
-  flex: 1;
-  align-items: flex-end;
-  justify-content: space-between;
+  justify-content: flex-end; /* left-aligned */
   width: 100%;
+  list-style: none;
+  margin: 0;
+  padding-right: var(--padding-small);
+  padding-bottom: var(--padding-jumbo);
 }
 
-/* Styling for left and right arrows */
-.arrow-left,
-.arrow-right {
-  width: 50%;
-}
-.arrow-right {
-  text-align: right;
-}
-
-.arrow {
-  padding: 0;
-}
-
-.navigation-arrow {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
+.navigation-button {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: 1.5px solid white;
+  border-radius: 17px;
+  background-color: transparent;
+  color: white; /* text green initially */
+  font-weight: 400;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
 }
 
-.arrow-circle {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 60px;
-  height: 60px;
-  transform: rotate(-90deg); /* start at top */
-}
-
-.arrow-circle circle {
-  fill: none;
-  stroke: #ffffff;
-  stroke-width: 2;
-  stroke-linecap: butt; /* smooth ends */
-  stroke-dasharray: 176; /* circumference ~ 2πr (2*π*28 ≈ 176) */
-  stroke-dashoffset: 176; /* start fully hidden */
-  transition: stroke-dashoffset 0.6s ease;
-}
-
-.navigation-arrow:hover .arrow-circle circle {
-  stroke-dashoffset: 0; /* draws full circle */
+.navigation-button:hover {
+  background-color: #d5f05d; /* fill green on hover */
+  color: black; /* text turns black */
 }
 
 ██████  ██       ██████   ██████      ██ ██████  ███████ ███████ ██    ██ ███    ███ ███████ 
@@ -1568,6 +1587,15 @@ to keep your styles reusable and consistent.
 
 /* Sketchbook Page Styles */
 
+.hero-headline-illustration {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  align-items: center;
+  margin-top: 10rem;
+  padding: var(--padding-small);
+}
+
 .sketchbook-page {
   display: grid;
   place-items: center;
@@ -1644,6 +1672,8 @@ to keep your styles reusable and consistent.
   .hero-name {
     flex-direction: row;
     white-space: normal; /* ensures wrapping works */
+    padding-left: var(--padding-large);
+    padding-right: var(--padding-large);
   }
   .flex-row {
     flex-direction: row; /* Changes to row layout on larger screens */
@@ -1705,6 +1735,15 @@ to keep your styles reusable and consistent.
     font-size: 5rem;
   }
 
+  .first-name {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .last-name {
+    margin-bottom: 0;
+  }
+
   /* Work Page Grid for Large Devices */
 
   .grid {
@@ -1755,7 +1794,10 @@ to keep your styles reusable and consistent.
   /* Project Full Width Styles */
 
   .project-wrapper-full-width {
-    padding: var(--padding-jumbo);
+    padding-right: var(--padding-jumbo);
+    padding-left: var(--padding-jumbo);
+    padding-top: var(--padding-large);
+    padding-bottom: var(--padding-medium);
   }
 
   .test {
@@ -1794,7 +1836,8 @@ to keep your styles reusable and consistent.
   }
 
   .project-navigation {
-    justify-content: flex-start;
+    justify-content: flex-end;
+    padding-right: var(--padding-jumbo);
   }
 
   .arrow {
