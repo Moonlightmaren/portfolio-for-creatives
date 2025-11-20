@@ -79,31 +79,64 @@
       </div>
     </section>
 
-    <section>
-      <div class="position-relative marquee-container d-none d-sm-block">
-        <div class="marquee d-flex justify-content-around">
-          <span>ILLUSTRATION</span>
-          <span>BRAND INDENITY</span>
-          <span>ADVERTISING</span>
-          <span>UX/UI</span>
-          <span>CREATIVE THINKING</span>
-          <span>ILLUSTRATION</span>
-          <span>BRAND INDENITY</span>
-          <span>ADVERTISING</span>
-          <span>UX/UI</span>
-          <span>CREATIVE THINKING</span>
+    <section class="marquee">
+      <div class="marquee__track">
+        <!-- Original content block -->
+        <div class="marquee__content">
+          <ul class="marquee__list">
+            <li class="marquee__item marquee__item--text">
+              <h3>Branding</h3>
+            </li>
+
+            <li class="marquee__item marquee__item--text">
+              <h3>UI/UX</h3>
+            </li>
+
+            <li class="marquee__item marquee__item--text">
+              <h3>Illustration</h3>
+            </li>
+
+            <li class="marquee__item marquee__item--text">
+              <h3>Creative Thinking</h3>
+            </li>
+
+            <li class="marquee__item marquee__item--text">
+              <h3>Advertising</h3>
+            </li>
+
+            <li class="marquee__item marquee__item--text">
+              <h3>Branding</h3>
+            </li>
+          </ul>
         </div>
-        <div class="marquee marquee2 d-flex justify-content-around">
-          <span>ILLUSTRATION</span>
-          <span>BRAND INDENITY</span>
-          <span>ADVERTISING</span>
-          <span>UX/UI</span>
-          <span>CREATIVE THINKING</span>
-          <span>ILLUSTRATION</span>
-          <span>BRAND INDENITY</span>
-          <span>ADVERTISING</span>
-          <span>UX/UI</span>
-          <span>CREATIVE THINKING</span>
+
+        <!-- One duplicate only -->
+        <div class="marquee__content">
+          <ul class="marquee__list">
+            <li class="marquee__item marquee__item--text">
+              <h3>UI/UX</h3>
+            </li>
+
+            <li class="marquee__item marquee__item--text">
+              <h3>Illustration</h3>
+            </li>
+
+            <li class="marquee__item marquee__item--text">
+              <h3>Creative Thinking</h3>
+            </li>
+
+            <li class="marquee__item marquee__item--text">
+              <h3>Advertising</h3>
+            </li>
+
+            <li class="marquee__item marquee__item--text">
+              <h3>Branding</h3>
+            </li>
+
+            <li class="marquee__item marquee__item--text">
+              <h3>Illustration</h3>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
@@ -297,7 +330,6 @@
       </li>
 
       <li class="footer-full-width">
-        <p><a href="#top">Smooth scroll to the top</a></p>
         <p class="footer-fineprint">
           &copy; <span id="copyright-years">2024-</span>. Hand-coded with care
           by Maren Brophy.
@@ -308,10 +340,6 @@
         </script>
       </li>
     </ul>
-
-    <div id="myID" class="bottomMenu hide">
-      <a href="#">Back to top</a>
-    </div>
 
     <script>
       myID = document.getElementById("myID");
