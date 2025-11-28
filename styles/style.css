@@ -131,19 +131,19 @@
   /* Special Text Colours */
   --color-text-holding-title: #ebedf0;
   --color-text-project-category: #ffffff;
-  --color-text-project-description: #000000;
+  --color-text-project-description: #ffffff;
   --color-text-project-sidebar: #222;
   --color-text-project-title: #91bf74;
   --color-text-work-grid-title: #ffffff;
   /* Link States */
   --color-link: #d5f05d;
-  --color-link-hover: #ffffff;
-  --color-link-visited: #ffffff;
+  --color-link-hover: #d5f05d;
+  --color-link-visited: #d5f05d;
   /* Navigation */
   --color-nav-link: #5200ff;
   --color-nav-link-hover: #d5f05d;
   --color-nav-arrow: #5200ff;
-  --color-nav-arrow-hover: #ffffff;
+  --color-nav-arrow-hover: #d5f05d;
   --color-nav-arrow-stroke: #ffffff;
   --color-nav-arrow-stroke-hover: #000;
   /* Components */
@@ -669,6 +669,14 @@ a.nav-link-primary:hover {
   /* TODO: Adjust the width of the logo on mobile devices here */
 }
 
+.nav-branding-logo img {
+  transition: 0.3s ease;
+}
+
+.nav-branding-logo:hover img {
+  content: url(../assets/branding-images/maren-brophy-logo-hover.svg);
+}
+
 .hero-headline-wrapper {
   display: flex;
   flex-direction: column;
@@ -904,8 +912,8 @@ a.nav-link-primary:hover {
 }
 
 .portfolio-illustration {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 0rem;
+  padding-right: 0rem;
 }
 
 /* Work Sidebar on Mobile */
@@ -1187,7 +1195,7 @@ a.nav-link-primary:hover {
   grid-gap: 1rem; /* Consistent spacing between sections */
   min-height: auto; /* Allows footer to expand based on content, no fixed height */
   background: #148b6d; /* Using CSS variable for theming */
-  padding: 1rem;
+  padding: 1.5rem;
   padding-top: 2rem;
   flex-direction: column;
 
@@ -1244,7 +1252,7 @@ a.nav-link-primary:hover {
 }
 
 .footer-social-icon {
-  width: 3rem;
+  width: 2.5rem;
   height: auto;
 }
 
@@ -1662,6 +1670,7 @@ to keep your styles reusable and consistent.
 
   .footer-fineprint {
     font-size: 0.8rem;
+    margin-bottom: 0rem;
   }
 
   .about-info {
@@ -1688,6 +1697,10 @@ to keep your styles reusable and consistent.
 @media (min-width: 992px) {
   /* TODO: Add or adjust styles here for large devices. */
 
+  .hero-headline-wrapper {
+    margin-top: 8rem;
+  }
+
   .hero-name {
     flex-direction: row;
     white-space: normal; /* ensures wrapping works */
@@ -1695,6 +1708,37 @@ to keep your styles reusable and consistent.
     padding-left: var(--padding-large);
     padding-right: var(--padding-large);
   }
+
+  .nav-branding {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: var(--padding-large);
+    padding-top: var(--padding-medium);
+    padding-bottom: var(--padding-medium);
+    align-items: center;
+    width: 100%;
+    /* solid black by default */
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.4); /* lower opacity for glassy effect */
+    backdrop-filter: blur(9px) saturate(150%);
+    -webkit-backdrop-filter: blur(12px) saturate(150%); /* for Safari */
+  }
+
+  .nav-branding-item {
+    font-size: 1.3rem;
+  }
+
+  .nav-branding-group {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+  }
+
+  .full-image-project {
+    margin-top: 10rem;
+  }
+
   .flex-row {
     flex-direction: row; /* Changes to row layout on larger screens */
   }
@@ -1749,6 +1793,7 @@ to keep your styles reusable and consistent.
     padding-bottom: var(--padding-small);
     padding-left: var(--padding-ultra);
     padding-right: var(--padding-ultra);
+    margin-top: 10rem;
   }
 
   .error-404 {
@@ -1814,8 +1859,8 @@ to keep your styles reusable and consistent.
   /* Project Full Width Styles */
 
   .project-wrapper-full-width {
-    padding-right: var(--padding-jumbo);
-    padding-left: var(--padding-jumbo);
+    padding-right: var(--padding-large);
+    padding-left: var(--padding-large);
     padding-top: var(--padding-large);
     padding-bottom: var(--padding-medium);
   }
@@ -1868,12 +1913,12 @@ to keep your styles reusable and consistent.
   /* About Page Grid for Large Devices */
 
   .about-grid {
-    padding: var(--padding-jumbo);
+    padding: var(--padding-large);
     grid-template-columns: 2fr 3fr;
   }
 
   .about-resume {
-    padding: var(--padding-jumbo);
+    padding: var(--padding-large);
     padding-top: 1.5rem;
   }
 
@@ -1891,11 +1936,12 @@ to keep your styles reusable and consistent.
   /* ------------------------------- */
 
   .footer-global {
-    padding-top: var(--padding-jumbo);
-    padding-right: var(--padding-jumbo);
+    padding-top: var(--padding-large);
+    padding-right: var(--padding-large);
     padding-bottom: 0;
-    padding-left: var(--padding-jumbo);
+    padding-left: var(--padding-large);
     grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+    grid-gap: 2.5rem;
   }
 
   /* Column 1: Tagline/Message */
