@@ -137,12 +137,12 @@
   --color-text-work-grid-title: #ffffff;
   /* Link States */
   --color-link: #d5f05d;
-  --color-link-hover: #d5f05d;
+  --color-link-hover: #97c239;
   --color-link-visited: #d5f05d;
   /* Navigation */
-  --color-nav-link: #5200ff;
+  --color-nav-link: #d5f05d;
   --color-nav-link-hover: #d5f05d;
-  --color-nav-arrow: #5200ff;
+  --color-nav-arrow: #d5f05d;
   --color-nav-arrow-hover: #d5f05d;
   --color-nav-arrow-stroke: #ffffff;
   --color-nav-arrow-stroke-hover: #000;
@@ -899,14 +899,14 @@ a.nav-link-primary:hover {
 .main-work-section {
   flex: 1;
   background-color: #000000;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 /* Padding around work grid and project page */
 .portfolio,
 .project-wrapper,
 .work-sidebar-wrapper {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
   padding-top: 3rem;
   padding-bottom: 4rem; /* Padding to keep content from touching edges */
 }
@@ -948,46 +948,10 @@ a.nav-link-primary:hover {
   list-style: none;
 }
 
-.work-page-item-1 {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-}
-
-.work-page-item-2 {
-  grid-column: 1 / 2;
-  grid-row: 2 / 2;
-}
-
-.work-page-item-3 {
-  grid-column: 1 / 2;
-  grid-row: 2 / 2;
-}
-
-.work-page-item-4 {
-  grid-column: 1 / 2;
-  grid-row: 3 / 3;
-}
-
-.work-page-item-5 {
-  grid-column: 1 / 2;
-  grid-row: 5 / 5;
-}
-
-.work-page-item-text {
-  grid-column: 1 / 2;
-  grid-row: 4 / 4;
-  margin-top: 1.5rem;
-  max-width: 60ch;
-}
-
-.work-page-item-7 {
-  grid-column: 1 / 2;
-  grid-row: 5 / 5;
-}
-
-.work-page-item-8 {
-  grid-column: 1 / 2;
-  grid-row: 6 / 6;
+/* Make every direct child span the full column (safe & simple) */
+.work-page-grid > * {
+  grid-column: 1 / -1;
+  grid-row: auto;
 }
 
 .project-details-text {
@@ -1617,10 +1581,10 @@ to keep your styles reusable and consistent.
   justify-content: flex-start;
   width: 100%;
   align-items: center;
-  margin-top: 7rem;
+  margin-top: 12rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  padding-bottom: 4rem;
+  padding-bottom: 3rem;
 }
 
 .sketchbook-page {
@@ -1737,6 +1701,10 @@ to keep your styles reusable and consistent.
 
   .full-image-project {
     margin-top: 10rem;
+  }
+
+  .hero-headline-illustration {
+    padding-left: var(--padding-large);
   }
 
   .flex-row {
@@ -2037,6 +2005,79 @@ to keep your styles reusable and consistent.
     grid-column: 1 / 7;
     grid-row: 6 / 6;
   }
+
+  .work-page-item-1-firth {
+    grid-column: 1 / 7;
+    grid-row: 1 / 2;
+  }
+
+  .work-page-item-2-firth {
+    grid-column: 4 / 7;
+    grid-row: 2 / 2;
+  }
+
+  .work-page-item-3-firth {
+    grid-column: 1 / 4;
+    grid-row: 2 / 2;
+  }
+
+  .work-page-item-4-firth {
+    grid-column: 1 / 7;
+    grid-row: 3 / 3;
+  }
+
+  .work-page-item-5-firth {
+    grid-column: 1 / 7;
+    grid-row: 4 / 4;
+  }
+
+  .work-page-item-7-firth {
+    grid-column: 1 / 7;
+    grid-row: 6 / 6;
+  }
+
+  .work-page-item-text-firth {
+    grid-column: 1 / 7;
+    grid-row: 5 / 5;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    max-width: 60ch;
+  }
+
+  .work-page-item-8-firth {
+    grid-column: 1 / 7;
+    grid-row: 7 / 7;
+  }
+
+  .work-page-item-9-firth {
+    grid-column: 1 / 7;
+    grid-row: 8 / 8;
+  }
+
+  .work-page-item-10-firth {
+    grid-column: 1 / 7;
+    grid-row: 9 / 9;
+  }
+
+  .work-page-item-3-major {
+    grid-column: 1 / 4;
+    grid-row: 3 / 3;
+  }
+
+  .work-page-item-10-major {
+    grid-column: 4 / 7;
+    grid-row: 3 / 3;
+  }
+
+  .work-page-item-7-afa {
+    grid-column: 1 / 4;
+    grid-row: 8 / 8;
+  }
+
+  .work-page-item-8-afa {
+    grid-column: 4 / 7;
+    grid-row: 8 / 8;
+  }
 }
 
 /* X-Large devices (large desktops, 1200px and up)*/
@@ -2050,14 +2091,6 @@ to keep your styles reusable and consistent.
 }
 
 /* XX-Large devices (larger desktops, 1400px and up) */
-
-@media (min-width: 1400px) {
-  /* TODO: Add styles here for XX-large devices. */
-
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
-  }
-}
 
 /*
 
