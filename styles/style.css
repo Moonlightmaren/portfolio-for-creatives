@@ -353,6 +353,7 @@ svg {
   width: 100%;
   padding-top: 56.25%; /* 16:9 Aspect Ratio (because 9 ÷ 16 = 0.5625) */
   margin-bottom: 1rem;
+  border: 2px solid blue;
 }
 /* The iframe is absolutely positioned to fill the container */
 .responsive-iframe {
@@ -1435,6 +1436,15 @@ a.nav-link-primary:hover {
   border: 1.5px solid #d5f05d;
 }
 
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  background: rgb(255, 0, 43);
+  padding: 1rem;
+}
+
+/*
+
 ██████  ██       ██████   ██████      ██ ██████  ███████ ███████ ██    ██ ███    ███ ███████ 
 ██   ██ ██      ██    ██ ██          ██  ██   ██ ██      ██      ██    ██ ████  ████ ██      
 ██████  ██      ██    ██ ██   ███   ██   ██████  █████   ███████ ██    ██ ██ ████ ██ █████   
@@ -2085,14 +2095,9 @@ to keep your styles reusable and consistent.
   }
 
   .flex-container {
-    display: flex;
     flex-direction: row;
-    padding: 0.25rem;
-  }
-
-  .video-container {
-    width: 50%;
-    padding: 0.25rem;
+    background: pink;
+    padding: 1rem;
   }
 }
 
