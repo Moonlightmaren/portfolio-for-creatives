@@ -138,7 +138,7 @@
   /* Link States */
   --color-link: #d5f05d;
   --color-link-hover: #97c239;
-  --color-link-visited: white;
+  --color-link-visited: #d5f05d;
   /* Navigation */
   --color-nav-link: #d5f05d;
   --color-nav-link-hover: #d5f05d;
