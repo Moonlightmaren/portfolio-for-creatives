@@ -2287,6 +2287,36 @@ to keep your styles reusable and consistent.
     grid-row: 9 / 9;
   }
 
+  .work-page-item-5-mocking {
+    grid-column: 1 / 4;
+    grid-row: 11 / 11;
+  }
+
+  .work-page-item-7-mocking {
+    grid-column: 4 / 7;
+    grid-row: 10 / 10;
+  }
+
+  .work-page-item-8-mocking {
+    grid-column: 1 / 4;
+    grid-row: 10 / 10;
+  }
+
+  .work-page-item-13-mocking {
+    grid-column: 1 / 7;
+    grid-row: 9 / 9;
+  }
+
+  .work-page-item-14-mocking {
+    grid-column: 1 / 7;
+    grid-row: 12 / 12;
+  }
+
+  .work-page-item-15-mocking {
+    grid-column: 4 / 7;
+    grid-row: 11 / 11;
+  }
+
   .flex-container {
     flex-direction: row;
     padding: 1rem;
