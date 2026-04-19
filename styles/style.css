@@ -36,12 +36,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
 
 /* Rubik Font (clean and modern for body text) */
-@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 
 /* Inter Font (great for readability and minimal design) */
-@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 
-@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 
 /*
 
@@ -104,30 +104,30 @@
 
 :root {
   /* Typography */
-  --font-family-body: "Work Sans", sans-serif;
-  --font-family-heading: "Work Sans" sans-serif;
-  --font-family-project-title: "Work Sans" sans-serif;
+  --font-family-body: "DM Sans", sans-serif;
+  --font-family-heading: "DM Sans" sans-serif;
+  --font-family-project-title: "DM Sans" sans-serif;
 
   /* Core Colours */
-  --color-text-primary: #222;
-  --color-text-secondary: #d5f05d;
+  --color-text-primary: #FAFAF5;
+  --color-text-secondary: #f5f5f5;;
   --color-accent-primary: #5200ff;
   --color-accent-secondary: #ff057c;
-  --color-overlay-primary: #000000;
+  --color-overlay-primary: #FAFAF5;
   --color-highlight: lemonchiffon;
-  --color-fallback: #ff057c; /* Fallback color for glitch effect on 404 page */
+  --color-fallback: #FAFAF5; /* Fallback color for glitch effect on 404 page */
   /* Backgrounds */
   --color-bg: #fdfdfd;
   --color-bg-about: #f5f5f5;
   --color-bg-footer: #f5f5f5;
   --color-bg-holding-page: rgba(255, 255, 255, 0.6);
   /* Headings */
-  --h1-color: #ffffff;
-  --h2-color: #ffffff;
-  --h3-color: #ffffff;
-  --h4-color: #d5f05d;
-  --h5-color: #148b6d;
-  --h6-color: #148b6d;
+  --h1-color: #000000;
+  --h2-color: #000000;
+  --h3-color: #000000;
+  --h4-color: #000000;
+  --h5-color: #f5f5f5;
+  --h6-color: #5671b2;
   /* Special Text Colours */
   --color-text-holding-title: #ebedf0;
   --color-text-project-category: #ffffff;
@@ -136,19 +136,19 @@
   --color-text-project-title: #91bf74;
   --color-text-work-grid-title: #ffffff;
   /* Link States */
-  --color-link: #d5f05d;
-  --color-link-hover: #97c239;
-  --color-link-visited: #d5f05d;
+  --color-link: #000;
+  --color-link-hover: #cb4f28;
+  --color-link-visited: #000;
   /* Navigation */
-  --color-nav-link: #d5f05d;
-  --color-nav-link-hover: #d5f05d;
-  --color-nav-arrow: #d5f05d;
-  --color-nav-arrow-hover: #d5f05d;
+  --color-nav-link: #000;
+  --color-nav-link-hover: #5671B2;
+  --color-nav-arrow: #000;
+  --color-nav-arrow-hover: #000;
   --color-nav-arrow-stroke: #ffffff;
   --color-nav-arrow-stroke-hover: #000;
   /* Components */
-  --color-bg-full-width: #000000;
-  --color-bg-project-description: #000000;
+  --color-bg-full-width: #FAFAF5;
+  --color-bg-project-description: #FAFAF5;
   --color-bg-sidebar-project: transparent;
   --color-bg-sidebar-work: rgb(255, 255, 255);
   --color-gradient-project-details: transparent;
@@ -214,7 +214,7 @@ html {
 body {
   font-family: var(--font-family-body);
   color: var(--color-text-primary);
-  background: #000;
+  background: #FAFAF5;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -251,6 +251,43 @@ svg {
 /* Use these helper classes to quickly apply 
    common styles across your portfolio site */
 /* ---------------------------------------- */
+
+.image-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-hover img {
+  display: block;
+  width: 100%;
+   transition: opacity 0.2s ease-in-out, transform 0.3s ease-in-out; /* add transform transition */
+}
+
+
+.image-hover .hover-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.image-hover:hover .hover-img {
+  opacity: 1;
+}
+
+.image-hover:hover .default-img {
+  opacity: 0;
+}
+
+/* Add this for scaling effect */
+.image-hover img {
+  transform: scale(1); /* default scale */
+}
+
+.image-hover:hover img {
+  transform: scale(1.03); /* slightly bigger on hover */
+}
+
 
 /* ------------------------ */
 /* 📐 Layout & Spacing Tools */
@@ -394,12 +431,12 @@ svg {
 /* Heading Styles (h1 - h6) */
 
 h1 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-family: var(--font-family-heading);
   line-height: 1.2;
   color: var(--h1-color);
-  font-weight: 500;
-  text-transform: uppercase;
+  font-weight: 600;
+   letter-spacing: 0.05em
 }
 
 h2 {
@@ -408,21 +445,21 @@ h2 {
   line-height: 1.2;
   margin-bottom: 1rem;
   color: var(--h2-color);
-  text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 h3 {
-  font-size: 1.325rem;
+  font-size: 1rem;
   margin-bottom: 1rem;
   line-height: 1.2;
   color: var(--h3-color);
+  font-weight: 300;
 }
 
 h4 {
   font-size: 1.2rem;
   line-height: 1.2;
-  margin-bottom: 1rem;
+  margin-bottom: 0.9rem;
   color: var(--h4-color);
 }
 
@@ -437,7 +474,7 @@ h5 {
 h6 {
   font-size: 0.9rem;
   line-height: 1.2;
-  margin-bottom: 1.6rem;
+  margin-bottom: 0.85rem;
   color: var(--h6-color);
 }
 
@@ -447,10 +484,10 @@ h6 {
 /* ------------------------------------------------------------------ */
 
 p {
-  font-size: 1rem;
-  line-height: 1.4;
+  font-size: 1.1rem;
+  line-height: 1.5;
   margin-bottom: 1.3rem;
-  color: #ffffff;
+  color: #000;
   font-weight: 300;
 }
 
@@ -469,7 +506,7 @@ em {
 
 /* Main hero headline — usually sits in the intro section */
 .hero-headline {
-  color: var(--color-overlay-primary); /* Uses your brand's dominant color */
+  color: #FAFAF5; /* Uses your brand's dominant color */
   max-width: 40ch; /* Optimal line length for readability (~40 characters) */
   text-wrap: balance; /* Prevents awkward line breaks (like elegant typography) */
   margin-inline: 0; /* Horizontally centers the text in its container */
@@ -565,7 +602,7 @@ a:active {
 /* -------------------------------------------------------------------------- */
 
 a.nav-link-primary {
-  color: #faf8f3;
+  color: #000000;
 }
 a.nav-link-primary:hover {
   color: var(--color-nav-link-hover);
@@ -629,7 +666,7 @@ a.nav-link-primary:hover {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  background-color: #000000;
+  background-color: #FAFAF5;
 }
 
 /* keep your original flex layout */
@@ -638,15 +675,10 @@ a.nav-link-primary:hover {
   flex-direction: row;
   justify-content: space-between;
   padding: 1.5rem;
-  padding-bottom: 1.5rem;
-  padding-top: 1.5rem;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
   align-items: center;
   width: 100%;
-  /* solid black by default */
-  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
-  background-color: rgba(0, 0, 0, 0.4); /* lower opacity for glassy effect */
-  backdrop-filter: blur(9px) saturate(150%);
-  -webkit-backdrop-filter: blur(12px) saturate(150%); /* for Safari */
 }
 
 .hero-header {
@@ -675,7 +707,7 @@ a.nav-link-primary:hover {
 }
 
 .nav-branding-logo:hover img {
-  content: url(../assets/branding-images/maren-brophy-logo-hover.svg);
+  content: url(../assets/icons/marenbrophy-logo-updated-hover.svg);
 }
 
 .hero-headline-wrapper {
@@ -689,9 +721,6 @@ a.nav-link-primary:hover {
 
 /* The white rules */
 .hero-line {
-  width: 100%;
-  height: 2px; /* thickness of the line */
-  background-color: white; /* color of the rule */
 }
 
 .hero-name {
@@ -743,13 +772,12 @@ a.nav-link-primary:hover {
 }
 
 .hero-below-text {
-  max-width: 70ch;
   flex-wrap: wrap;
   justify-content: space-between;
-  max-width: 2000px; /* match the width of your main site content */
-  padding: 2rem 1rem; /* optional, smaller spacing */
+  padding: 3rem 17rem; /* optional, smaller spacing */
   gap: 2rem; /* space between the two columns */
-  background: #000000; /* optional light background */
+  background: #FAFAF5; /* optional light background */
+  text-align: center;
 }
 
 /* The outer container — holds everything in place */
@@ -758,11 +786,10 @@ a.nav-link-primary:hover {
   width: 100%;
   min-height: 10vh;
   overflow: hidden;
-  background: black;
-  border-top: 2px solid white;
-  border-bottom: 2px solid white;
+  background-color:#FAFAF5;
   display: flex;
   align-items: center;
+  margin-top: 2.5rem;
 }
 
 /* The moving "track" that slides left to right */
@@ -823,7 +850,7 @@ a.nav-link-primary:hover {
   font-size: 1.3rem;
   margin: 0;
   white-space: nowrap;
-  color: white;
+  color: #000;
 }
 
 /*
@@ -899,7 +926,7 @@ a.nav-link-primary:hover {
 /* Work wrapper (takes up available space) */
 .main-work-section {
   flex: 1;
-  background-color: #000000;
+  background-color: #FAFAF5;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
@@ -937,7 +964,7 @@ a.nav-link-primary:hover {
     auto-fit,
     minmax(300px, 1fr)
   ); /* Creates a responsive grid */
-  grid-gap: 1rem; /* Space between grid items */
+  grid-gap: 2rem; /* Space between grid items */
   /* The auto-fit and minmax() function help ensure responsiveness across screen sizes */
 }
 
@@ -975,15 +1002,15 @@ a.nav-link-primary:hover {
 .work-grid-project-category span {
   display: inline-block; /* Fit each word */
   font-size: 1rem; /* Slightly smaller text */
-  font-weight: 300;
-  color: white;
+  font-weight: 400;
+  color: #7C7C7C;
   background: transparent;
   margin-right: 1rem; /* Space between words */
   margin-top: 0.1rem; /* Optional vertical spacing */
 }
 
 .project-details {
-  margin-top: 1rem; /* space between image and text */
+  margin-top: 1.5rem; /* space between image and text */
   text-align: left; /* align left (change to center if preferred) */
 }
 
@@ -991,7 +1018,7 @@ a.nav-link-primary:hover {
 .project-details .work-grid-project-title {
   font-size: 1.8rem; /* adjust size as needed */
   margin: 0; /* remove default spacing */
-  color: #ffffff; /* black text (adjust if needed) */
+  color: #000000; /* black text (adjust if needed) */
   display: flex;
   flex-direction: column; /* stack title and categories */
   align-items: flex-start; /* left-align everything */
@@ -1002,7 +1029,7 @@ a.nav-link-primary:hover {
   font-size: 1rem;
   font-weight: 400;
   margin-top: 0.3rem; /* little space under title */
-  color: #ffffff; /* softer gray text */
+  color: #000000; /* softer gray text */
 }
 
 /* Project container for background and padding */
@@ -1091,8 +1118,8 @@ a.nav-link-primary:hover {
 .about-grid {
   display: grid; /* Set to grid layout */
   grid-template-columns: 1fr; /* Single column layout for mobile and smaller screens */
-  grid-gap: 4rem; /* Space between grid items */
-  background: #000; /* Background color for the section */
+  grid-gap: 5rem; /* Space between grid items */
+  background: #FAFAF5; /* Background color for the section */
   padding: 1.5rem; /* Padding around the grid */
   flex: 1; /* Flex-grow to take up available space */
   margin-top: 5rem;
@@ -1112,12 +1139,13 @@ a.nav-link-primary:hover {
 }
 
 .about-info {
-  font-size: 2rem;
+  font-size: 1.6rem;
   margin-bottom: 2rem;
+  margin-top: 1.4rem;
 }
 
 .resume-line {
-  border-top: 1.5px solid #ffffff;
+  border-top: 1.5px solid #000000;
   width: 100%;
   padding-bottom: 1.3rem;
   line-height: 2rem;
@@ -1165,7 +1193,7 @@ a.nav-link-primary:hover {
   grid-template-columns: 1fr; /* Single column layout */
   grid-gap: 1rem; /* Consistent spacing between sections */
   min-height: auto; /* Allows footer to expand based on content, no fixed height */
-  background: #148b6d; /* Using CSS variable for theming */
+  background: #000000; /* Using CSS variable for theming */
   padding: 1.5rem;
   padding-top: 2rem;
   flex-direction: column;
@@ -1318,7 +1346,7 @@ a.nav-link-primary:hover {
   width: 100%;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  background: #000;
+  background: #FAFAF5;
   margin-top: 2rem;
 }
 
@@ -1370,7 +1398,7 @@ a.nav-link-primary:hover {
 .project-descriptors {
   display: block;
   padding: 0; /* vertical spacing to center text */
-  color: white;
+  color: #000;
   line-height: 1.2;
   font-size: 1.2rem;
   width: 100%; /* stretch lines to edges of container */
@@ -1413,25 +1441,25 @@ a.nav-link-primary:hover {
 .navigation-button {
   display: inline-block;
   padding: 0.5rem 1rem;
-  border: 1.5px solid white;
+  border: 1.5px solid #000;
   border-radius: 19px;
   background-color: transparent;
-  color: white; /* text green initially */
+  color: #000; /* text green initially */
   font-weight: 400;
   font-size: 0.8rem;
   transition: all 0.3s ease;
 }
 
 .navigation-button:hover {
-  background-color: #d5f05d; /* fill green on hover */
-  color: black; /* text turns black */
-  border: 1.5px solid #d5f05d;
+  background-color: #000; /* fill green on hover */
+  color: #FAFAF5; /* text turns black */
+  border: 1.5px solid #000d;
 }
 
 .navigation-button-2 {
   display: inline-block;
   padding: 0.5rem 1rem;
-  border: 1.5px solid white;
+  border: 1.5px solid #000;
   border-radius: 19px;
   background-color: transparent;
   color: white; /* text green initially */
@@ -1441,9 +1469,9 @@ a.nav-link-primary:hover {
 }
 
 .navigation-button-2:hover {
-  background-color: #d5f05d; /* fill green on hover */
-  color: black; /* text turns black */
-  border: 1.5px solid #d5f05d;
+  background-color: #000; /* fill green on hover */
+  color: #FAFAF5; /* text turns black */
+  border: 1.5px solid #000;
 }
 
 .flex-container {
@@ -1657,6 +1685,11 @@ to keep your styles reusable and consistent.
     gap: 0.75rem; /* tighter vertical spacing */
   }
 
+  .hero-below-text {
+    text-align: left;
+    padding:2rem 1rem;
+  }
+
   h4 {
     font-size: 1rem;
   }
@@ -1707,19 +1740,15 @@ to keep your styles reusable and consistent.
     flex-direction: row;
     justify-content: space-between;
     padding: var(--padding-large);
-    padding-top: var(--padding-medium);
-    padding-bottom: var(--padding-medium);
+    padding-top: var(--padding-small);
+    padding-bottom: var(--padding-small);
     align-items: center;
     width: 100%;
-    /* solid black by default */
-    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
-    background-color: rgba(0, 0, 0, 0.4); /* lower opacity for glassy effect */
-    backdrop-filter: blur(9px) saturate(150%);
-    -webkit-backdrop-filter: blur(12px) saturate(150%); /* for Safari */
+    background-color: #FAFAF5; 
   }
 
   .nav-branding-item {
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
 
   .nav-branding-group {
@@ -1755,7 +1784,7 @@ to keep your styles reusable and consistent.
   }
 
   h2 {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   h3 {
@@ -1813,30 +1842,6 @@ to keep your styles reusable and consistent.
     grid-gap: 1rem;
   }
 
-  /* Grayscale filter with full-colour on hover and tap */
-
-  /* ------------------------------- */
-  /* 🎞️ Image Hover - Color Reveal Effect */
-  /* ------------------------------- */
-
-  img.rounded-large {
-    filter: grayscale(100%) brightness(90%);
-    transition: filter 0.5s ease-in-out; /* remove transform transition */
-  }
-
-  img.rounded-large:hover {
-    filter: grayscale(0%) brightness(100%);
-    /* remove transform: no size changes */
-  }
-
-  .work-page-grid-item a.grayscale img {
-    filter: grayscale(100%);
-  }
-
-  .work-page-grid-item > a.grayscale:hover img,
-  .work-page-grid-item > a.grayscale:active img {
-    filter: grayscale(0%);
-  }
 
   /* Padding around work grid and project page */
 
@@ -1982,13 +1987,14 @@ to keep your styles reusable and consistent.
 
   .main-work-section {
     padding: var(--padding-large);
+    padding-top: var(--padding-small);
   }
 
   .work-page-grid {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     display: grid;
-    grid-row-gap: 1rem;
-    grid-column-gap: 1rem;
+    grid-row-gap: 3rem;
+    grid-column-gap: 3rem;
     list-style: none;
   }
 
@@ -2007,7 +2013,7 @@ to keep your styles reusable and consistent.
   .navigation-button {
     display: inline-block;
     padding: 0.5rem 1rem;
-    border: 1.5px solid white;
+    border: 1.5px solid black;
     border-radius: 22px;
     background-color: transparent;
     color: white; /* text green initially */
@@ -2017,15 +2023,15 @@ to keep your styles reusable and consistent.
   }
 
   .navigation-button:hover {
-    background-color: #d5f05d; /* fill green on hover */
-    color: black; /* text turns black */
-    border: 1.5px solid #d5f05d;
+    background-color: #5671B2; /* fill green on hover */
+    color: #FAFAF5; /* text turns black */
+    border: 1.5px solid #5671B2;
   }
 
   .navigation-button-2 {
     display: inline-block;
     padding: 0.5rem 1rem;
-    border: 1.5px solid white;
+    border: 1.5px solid black;
     border-radius: 22px;
     background-color: transparent;
     color: white; /* text green initially */
@@ -2035,9 +2041,9 @@ to keep your styles reusable and consistent.
   }
 
   .navigation-button-2:hover {
-    background-color: #d5f05d; /* fill green on hover */
-    color: black; /* text turns black */
-    border: 1.5px solid #d5f05d;
+    background-color: #5671B2; /* fill green on hover */
+    color: #FAFAF5; /* text turns black */
+    border: 1.5px solid #5671B2;
   }
 
   .work-page-item-1 {
@@ -2328,9 +2334,12 @@ to keep your styles reusable and consistent.
 @media (min-width: 1200px) {
   /* TODO: Add styles here for X-large devices. */
 
+  @media (min-width: 1200px) {
   .grid {
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
+}
 }
 
 /* XX-Large devices (larger desktops, 1400px and up) */
