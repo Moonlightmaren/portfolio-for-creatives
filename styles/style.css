@@ -1716,18 +1716,11 @@ to keep your styles reusable and consistent.
     font-size: 1rem;
   }
 
-    .marquee__content {
-    min-width: 0;                  /* stop stretching each copy to the screen width */
+   .nav-branding {
+    padding: 0.5rem 1rem;        /* tighter side padding */
+    background-color: #FAFAF5;
   }
-
-  .marquee__list {
-    justify-content: flex-start;   /* no spreading, so the gap is just the item padding */
-    flex: none;
-  }
-
-  .marquee__item {
-    padding: 0 1rem;               /* same value as your desktop rule */
-  }
+  
 
   .footer-fineprint {
     font-size: 0.8rem;
