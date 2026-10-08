@@ -1721,6 +1721,32 @@ to keep your styles reusable and consistent.
     background-color: #FAFAF5;
   }
   
+   .marquee {
+    margin-top: 1.5rem;
+    padding: 1rem 0;
+  }
+
+  .marquee__track {
+    animation-duration: 14s; /* shorter distance feel on small screens */
+  }
+
+  .marquee__content {
+    min-width: 150vw; /* more room per copy so items don't feel cramped */
+  }
+
+  .marquee__list {
+    margin-top: 1.5rem;
+    justify-content: flex-start; /* use fixed gaps instead of stretching */
+    gap: 2rem;
+  }
+
+  .marquee__item {
+    padding: 0 1rem;
+  }
+
+  .marquee__item h3 {
+    font-size: 1rem;
+  }
 
   .footer-fineprint {
     font-size: 0.8rem;
